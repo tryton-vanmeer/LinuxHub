@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from osinfo import OSInfo, Distros
 
 app = FastAPI()
@@ -23,3 +23,21 @@ def read_distro(distro_id: Distros):
         data.append({"id": os.get_short_id(), "name": os.get_name()})
 
     return data
+
+
+@app.get("/distro/{distro_id}/{os_id}")
+def read_distro_os(distro_id: Distros, os_id: str):
+    os = osinfo.get_distro_os(distro_id, os_id)
+
+    if os is None:
+        raise HTTPException(status_code=404, detail="OS not found")
+
+    return {
+        "distro_id": distro_id.value,
+        "distro_name": distro_id.string,
+        "id": os_id,
+        "name": os.get_name(),
+        "codename": os.get_codename(),
+        "eol": os.get_eol_date_string(),
+        "version": os.get_version(),
+    }
