@@ -51,6 +51,9 @@ class OSInfo():
         # Filter list to contain only Linux
         self.os_list = [os for os in _os_list if os.get_family() == "linux"]
 
+    def get_os_list_by_distro(self, distro_name):
+        return [os for os in self.os_list if os.get_distro() == distro_name]
+
 
 if __name__ == "__main__":
     osinfo = OSInfo()
