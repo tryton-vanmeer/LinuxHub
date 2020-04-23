@@ -1,8 +1,10 @@
 from fastapi import FastAPI
+from osinfo import OSInfo
 
 app = FastAPI()
+osinfo = OSInfo()
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get("/distro")
+def read_distro():
+    return osinfo.DISTROS
