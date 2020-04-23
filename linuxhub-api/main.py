@@ -9,11 +9,17 @@ osinfo = OSInfo()
 def read_distros():
     data = []
     for distro in Distros:
-        data.append({"id": distro.name, "name": distro.value})
+        data.append({"id": distro.value, "name": distro.string})
 
     return data
 
 
-@app.get("/distro/{id}")
-def read_distro(id: str):
-    pass
+@app.get("/distro/{distro_id}")
+def read_distro(distro_id: Distros):
+    data = []
+    os_list = osinfo.get_os_list_by_distro(distro_id)
+
+    for os in os_list:
+        data.append({"id": os.get_short_id(), "name": os.get_name()})
+
+    return data
