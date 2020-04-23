@@ -7,10 +7,21 @@ from gi.repository import Libosinfo  # noqa: I202
 
 
 class Distros(str, Enum):
-    fedora = "Fedora"
-    ubuntu = "Ubuntu"
-    archlinux = "Arch Linux"
-    debian = "Debian"
+    fedora = "fedora"
+    ubuntu = "ubuntu"
+    archlinux = "archlinux"
+    debian = "debian"
+
+    @property
+    def string(self):
+        if self.name == "fedora":
+            return "Fedora"
+        elif self.name == "ubuntu":
+            return "Ubuntu"
+        elif self.name == "archlinux":
+            return "Arch Linux"
+        elif self.name == "debian":
+            return "Debian"
 
 
 class OSInfo():
