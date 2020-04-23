@@ -51,8 +51,18 @@ class OSInfo():
         # Filter list to contain only Linux
         self.os_list = [os for os in _os_list if os.get_family() == "linux"]
 
-    def get_distro_os_list(self, distro_name):
-        return [os for os in self.os_list if os.get_distro() == distro_name]
+    def get_distro_os_list(self, distro_id: str) -> list:
+        return [os for os in self.os_list if os.get_distro() == distro_id]
+
+    def get_distro_os(self, distro_id: str, os_id: str) -> Libosinfo.Os:
+        os_list = self.get_distro_os_list(distro_id)
+
+        result = [os for os in os_list if os.get_short_id() == os_id]
+
+        try:
+            return result[0]
+        except IndexError:
+            return None
 
 
 if __name__ == "__main__":
