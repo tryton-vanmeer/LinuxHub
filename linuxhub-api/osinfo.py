@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
+
+from enum import Enum
 import gi
 gi.require_version("Libosinfo", "1.0")
 from gi.repository import Libosinfo  # noqa: I202
+
+
+class Distros(str, Enum):
+    fedora = "Fedora"
+    ubuntu = "Ubuntu"
+    archlinux = "Arch Linux"
+    debian = "Debian"
 
 
 class OSInfo():
     """
     Wrapper around Libosinfo.
     """
-
-    DISTROS = [
-        {"id": "fedora", "name": "Fedora"},
-        {"id": "ubuntu", "name": "Ubuntu"},
-        {"id": "archlinux", "name": "Arch Linux"},
-        {"id": "debian", "name": "Debian"},
-    ]
 
     def __init__(self):
         self._init_db()
