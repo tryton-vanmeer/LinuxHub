@@ -39,6 +39,11 @@ class Os():
         self.eol = os.get_eol_date_string()
         self.version = os.get_version()
 
+    def get_media(self):
+        media_list = self._os.get_media_list()
+
+        return [media_list.get_nth(i) for i in range(media_list.get_length())]
+
 
 class OSInfo():
     """
