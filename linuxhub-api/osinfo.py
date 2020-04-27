@@ -46,7 +46,7 @@ class Os():
 
     def get_media_name(self, media):
         media_list = self.get_media()
-        variant_list = self._os.get_variant_list()
+        variant_list = media.get_os_variants()
 
         variant = variant_list.get_nth(media_list.index(media))
 
