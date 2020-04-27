@@ -8,6 +8,7 @@ from gi.repository import Libosinfo  # noqa: I202
 
 class Distros(str, Enum):
     fedora = "fedora"
+    silverblue = "silverblue"
     ubuntu = "ubuntu"
     archlinux = "archlinux"
     debian = "debian"
@@ -16,6 +17,8 @@ class Distros(str, Enum):
     def string(self):
         if self.name == "fedora":
             return "Fedora"
+        elif self.name == "silverblue":
+            return "Silverblue"
         elif self.name == "ubuntu":
             return "Ubuntu"
         elif self.name == "archlinux":
