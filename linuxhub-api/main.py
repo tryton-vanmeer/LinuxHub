@@ -32,6 +32,17 @@ def read_distro_os(distro_id: Distro, os_id: str):
     if os is None:
         raise HTTPException(status_code=404, detail="OS not found")
 
+    media_list = []
+
+    for media in os.get_media():
+        media_list.append(
+            {
+                "url": media.get_url(),
+                "arch": media.get_architecture(),
+                "name": os.get_media_name(media),
+            }
+        )
+
     return {
         "distro_id": distro_id.value,
         "distro_name": distro_id.string,
@@ -39,4 +50,5 @@ def read_distro_os(distro_id: Distro, os_id: str):
         "codename": os.codename,
         "eol": os.eol,
         "version": os.version,
+        "media": media_list,
     }
