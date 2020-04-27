@@ -27,6 +27,15 @@ class Distro(str, Enum):
             return "Debian"
 
 
+class Os():
+    """
+    Wrapper around Libosinfo.Os
+    """
+
+    def __init__(self, os: Libosinfo.Os):
+        self._os = os
+
+
 class OSInfo():
     """
     Wrapper around Libosinfo.
@@ -71,13 +80,13 @@ class OSInfo():
 
         return [os for os in self.os_list if os.get_distro() == distro_id]
 
-    def get_distro_os(self, distro_id: str, os_id: str) -> Libosinfo.Os:
+    def get_distro_os(self, distro_id: str, os_id: str) -> Os:
         os_list = self.get_distro_os_list(distro_id)
 
         result = [os for os in os_list if os.get_version() == os_id]
 
         try:
-            return result[0]
+            return Os(result[0])
         except IndexError:
             return None
 
