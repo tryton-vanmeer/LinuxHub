@@ -34,6 +34,10 @@ class Os():
 
     def __init__(self, os: Libosinfo.Os):
         self._os = os
+        self.name = os.get_name()
+        self.codename = os.get_codename()
+        self.eol = os.get_eol_date_string()
+        self.version = os.get_version()
 
 
 class OSInfo():

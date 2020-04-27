@@ -35,9 +35,8 @@ def read_distro_os(distro_id: Distro, os_id: str):
     return {
         "distro_id": distro_id.value,
         "distro_name": distro_id.string,
-        "id": os_id,
-        "name": os.get_name(),
-        "codename": os.get_codename(),
-        "eol": os.get_eol_date_string(),
-        "version": os.get_version(),
+        "name": os.name,
+        "codename": os.codename,
+        "eol": os.eol,
+        "version": os.version,
     }
