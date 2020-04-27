@@ -6,7 +6,7 @@ gi.require_version("Libosinfo", "1.0")
 from gi.repository import Libosinfo  # noqa: I202
 
 
-class Distros(str, Enum):
+class Distro(str, Enum):
     fedora = "fedora"
     silverblue = "silverblue"
     ubuntu = "ubuntu"
@@ -55,7 +55,9 @@ class OSInfo():
         self.os_list = [os for os in _os_list if os.get_family() == "linux"]
 
     def get_distro_os_list(self, distro_id: str) -> list:
-        return [os for os in self.os_list if os.get_distro() == distro_id]
+        distros = [os for os in self.os_list if os.get_distro() == distro_id]
+
+        return distros
 
     def get_distro_os(self, distro_id: str, os_id: str) -> Libosinfo.Os:
         os_list = self.get_distro_os_list(distro_id)

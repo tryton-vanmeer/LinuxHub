@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from osinfo import OSInfo, Distros
+from osinfo import OSInfo, Distro
 
 app = FastAPI()
 osinfo = OSInfo()
@@ -8,14 +8,14 @@ osinfo = OSInfo()
 @app.get("/distro")
 def read_distros():
     data = []
-    for distro in Distros:
+    for distro in Distro:
         data.append({"id": distro.value, "name": distro.string})
 
     return data
 
 
 @app.get("/distro/{distro_id}")
-def read_distro(distro_id: Distros):
+def read_distro(distro_id: Distro):
     data = []
     os_list = osinfo.get_distro_os_list(distro_id)
 
@@ -26,7 +26,7 @@ def read_distro(distro_id: Distros):
 
 
 @app.get("/distro/{distro_id}/{os_id}")
-def read_distro_os(distro_id: Distros, os_id: str):
+def read_distro_os(distro_id: Distro, os_id: str):
     os = osinfo.get_distro_os(distro_id, os_id)
 
     if os is None:
