@@ -74,7 +74,7 @@ class OSInfo():
     def get_distro_os(self, distro_id: str, os_id: str) -> Libosinfo.Os:
         os_list = self.get_distro_os_list(distro_id)
 
-        result = [os for os in os_list if os.get_short_id() == os_id]
+        result = [os for os in os_list if os.get_version() == os_id]
 
         try:
             return result[0]

@@ -20,7 +20,7 @@ def read_distro(distro_id: Distro):
     os_list = osinfo.get_distro_os_list(distro_id)
 
     for os in os_list:
-        data.append({"id": os.get_short_id(), "name": os.get_name()})
+        data.append({"id": os.get_version(), "name": os.get_name()})
 
     return data
 
