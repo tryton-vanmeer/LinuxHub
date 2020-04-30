@@ -1,9 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
-import HelloComponent from "./hello";
+import "./sass/main.scss";
 
 ReactDOM.render(
-    <HelloComponent/>,
+    <h1>Hello, World!</h1>,
     document.getElementById('root')
 );
