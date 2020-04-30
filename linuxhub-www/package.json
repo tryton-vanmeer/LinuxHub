@@ -1,7 +1,7 @@
 {
   "name": "linuxhub-www",
   "scripts": {
-    "start": "webpack-dev-server --mode development --inline --hot --open",
+    "start": "webpack-dev-server --mode development --live",
     "build": "webpack --mode development"
   },
   "devDependencies": {
