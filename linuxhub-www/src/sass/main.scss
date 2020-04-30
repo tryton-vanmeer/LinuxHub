@@ -1,2 +1,21 @@
 @charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto%20Sans:400,700');
+
+$family-sans-serif: "Noto Sans", sans-serif;
+
+$orange: #ffa31a;
+$grey-light: #808080;
+$grey-dark: #292929;
+$black: #1b1b1b;
+$white: #ffffff;
+
+$primary: $orange;
+$dark: $grey-dark;
+$text: $white;
+$link: $primary;
+
+$body-background-color: $grey-dark;
+
 @import "~bulma/bulma";
+@import "header"
