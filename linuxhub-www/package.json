@@ -6,6 +6,8 @@
   },
   "devDependencies": {
     "html-webpack-plugin": "^4.2.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
     "webpack": "^4.43.0",
