@@ -18,4 +18,5 @@ $link: $primary;
 $body-background-color: $grey-dark;
 
 @import "~bulma/bulma";
-@import "header"
+@import "_header";
+@import "_imagelink";
