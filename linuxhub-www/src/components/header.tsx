@@ -1,4 +1,5 @@
 import * as React from "react";
+import {Link} from "react-router-dom";
 
 class Header extends React.Component<{}, {}> {
     private connect_hamburger() {
@@ -35,9 +36,9 @@ class Header extends React.Component<{}, {}> {
                     <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="buttons">
-                                <a className="button is-primary">
+                                <Link to="/about" className="button is-primary">
                                     <strong>About</strong>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

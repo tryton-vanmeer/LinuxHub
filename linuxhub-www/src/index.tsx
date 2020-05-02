@@ -13,6 +13,7 @@ ReactDOM.render((
         <Router history={createBrowserHistory()}>
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={Home} />
                 <Route exact path="/distro" component={Home} />
             </Switch>
         </Router>
