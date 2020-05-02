@@ -1,20 +1,21 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {BrowserRouter, Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from 'history'
 import Header from "./components/header";
 import Home from "./routes/home"
+import Distro from "./routes/distro";
 import "./sass/main.scss";
 
 ReactDOM.render((
     <BrowserRouter>
-        <Header />
-
         <Router history={createBrowserHistory()}>
+            <Header />
+
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={Home} />
-                <Route exact path="/distro" component={Home} />
+                <Route path="/distro/:id" component={Distro} />
             </Switch>
         </Router>
     </BrowserRouter>
