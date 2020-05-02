@@ -1,4 +1,5 @@
 import * as React from "react";
+import {Link} from "react-router-dom";
 
 interface ImageLinkProps {
     link: string;
@@ -11,10 +12,10 @@ class ImageLink extends React.Component<ImageLinkProps, {}> {
         const {link, img, title} = this.props;
 
         return (
-            <a className="imagelink" href={link}>
+            <Link to={link} className="imagelink">
                 <img src={img} alt={title + " Logo"}/>
                 <p>{title}</p>
-            </a>
+            </Link>
         );
     }
 }
