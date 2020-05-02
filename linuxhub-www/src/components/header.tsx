@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Header extends React.Component<{}, {}> {
     private connect_hamburger() {
@@ -21,9 +21,9 @@ class Header extends React.Component<{}, {}> {
         return(
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <a id="navbar-logo" className="navbar-item" href="/">
+                    <Link to="/" id="navbar-logo" className="navbar-item">
                         <span>Linux</span><span>hub</span>
-                    </a>
+                    </Link>
 
                     <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
                         <span aria-hidden="true"></span>
