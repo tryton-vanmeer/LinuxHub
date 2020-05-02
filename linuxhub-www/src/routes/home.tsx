@@ -4,7 +4,7 @@ import ImageLink from "../components/imagelink";
 class Index extends React.Component<{}, {}> {
     public render() {
         return (
-            <main id="view-index">
+            <main>
                 <div className="columns is-desktop">
                     <div className="column">
                         <ImageLink
