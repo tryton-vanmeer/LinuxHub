@@ -1,13 +1,9 @@
 import * as React from "react";
-import Header from "../components/header";
 import ImageLink from "../components/imagelink";
 
 class Index extends React.Component<{}, {}> {
     public render() {
         return (
-            <>
-            <Header />
-
             <main id="view-index">
                 <div className="columns is-desktop">
                     <div className="column">
@@ -40,7 +36,6 @@ class Index extends React.Component<{}, {}> {
                     </div>
                 </div>
             </main>
-            </>
         )
     }
 }
