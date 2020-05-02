@@ -1,7 +1,8 @@
 import * as React from "react";
+import { withRouter } from "react-router-dom";
 import ImageLink from "../components/imagelink";
 
-class Index extends React.Component<{}, {}> {
+class Home extends React.Component<{}, {}> {
     public render() {
         return (
             <main>
@@ -40,4 +41,4 @@ class Index extends React.Component<{}, {}> {
     }
 }
 
-export default Index;
+export default Home;
