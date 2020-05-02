@@ -8,28 +8,28 @@ class Index extends React.Component<{}, {}> {
                 <div className="columns is-desktop">
                     <div className="column">
                         <ImageLink
-                            link="/fedora"
+                            link="/distro/fedora"
                             title="Fedora"
                             img="https://gitlab.gnome.org/GNOME/gnome-boxes-logos/-/raw/master/logos/fedora.svg"
                         />
                     </div>
                     <div className="column">
                         <ImageLink
-                            link="/silverblue"
+                            link="/distro/silverblue"
                             title="Silverblue"
                             img="https://gitlab.gnome.org/GNOME/gnome-boxes-logos/-/raw/master/logos/silverblue.svg"
                         />
                     </div>
                     <div className="column">
                         <ImageLink
-                            link="/ubuntu"
+                            link="/distro/ubuntu"
                             title="Ubuntu"
                             img="https://gitlab.gnome.org/GNOME/gnome-boxes-logos/-/raw/master/logos/ubuntu.svg"
                         />
                     </div>
                     <div className="column">
                         <ImageLink
-                            link="/debian"
+                            link="/distro/debian"
                             title="Debian"
                             img="https://gitlab.gnome.org/GNOME/gnome-boxes-logos/-/raw/master/logos/debian.svg"
                         />
