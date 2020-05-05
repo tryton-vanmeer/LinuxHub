@@ -23,6 +23,18 @@ module.exports = {
         historyApiFallback: {
             index: "/"
         },
+        proxy: {
+            "/api": {
+                target: {
+                    host: "0.0.0.0",
+                    protocol: "http:",
+                    port: 8000
+                },
+                pathRewrite: {
+                    '^/api': ''
+                }
+            }
+        }
     },
     module: {
         rules: [
