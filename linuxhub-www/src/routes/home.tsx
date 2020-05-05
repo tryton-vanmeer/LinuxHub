@@ -11,28 +11,28 @@ class Home extends React.Component<{}, {}> {
                         <ImageLink
                             link="/distro/fedora"
                             title="Fedora"
-                            img="https://gitlab.gnome.org/GNOME/gnome-boxes-logos/-/raw/master/logos/fedora.svg"
+                            img={require("../assets/fedora.svg").default}
                         />
                     </div>
                     <div className="column">
                         <ImageLink
                             link="/distro/silverblue"
                             title="Silverblue"
-                            img="https://gitlab.gnome.org/GNOME/gnome-boxes-logos/-/raw/master/logos/silverblue.svg"
+                            img={require("../assets/silverblue.svg").default}
                         />
                     </div>
                     <div className="column">
                         <ImageLink
                             link="/distro/ubuntu"
                             title="Ubuntu"
-                            img="https://gitlab.gnome.org/GNOME/gnome-boxes-logos/-/raw/master/logos/ubuntu.svg"
+                            img={require("../assets/ubuntu.svg").default}
                         />
                     </div>
                     <div className="column">
                         <ImageLink
                             link="/distro/debian"
                             title="Debian"
-                            img="https://gitlab.gnome.org/GNOME/gnome-boxes-logos/-/raw/master/logos/debian.svg"
+                            img={require("../assets/debian.svg").default}
                         />
                     </div>
                 </div>
