@@ -8,7 +8,7 @@ class Distro extends React.Component<RouteProps, {}> {
 
         return (
             <main>
-                <h1>{id}</h1>
+                <h1 class="distro-header">{id}</h1>
             </main>
         );
     }
