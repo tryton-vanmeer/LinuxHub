@@ -7,9 +7,10 @@ osinfo = OSInfo()
 
 @app.get("/distro")
 def read_distros():
-    data = []
+    data = {}
     for distro in Distro:
-        data.append({"id": distro.value, "name": distro.string})
+        # data.append({"id": distro.value, "name": distro.string})
+        data[distro.value] = {"name": distro.string}
 
     return data
 
