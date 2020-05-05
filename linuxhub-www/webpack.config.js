@@ -10,7 +10,8 @@ module.exports = {
     entry: ["./index.tsx"],
     output: {
         path: path.join(__dirname, "dist"),
-        filename: "bundle.js"
+        publicPath: "/",
+        filename: "bundle.js",
     },
     devtool: "source-map",
     devServer: {
@@ -18,7 +19,10 @@ module.exports = {
         inline: true,
         host: "localhost",
         port: 8080,
-        stats: "errors-only"
+        stats: "errors-only",
+        historyApiFallback: {
+            index: "/"
+        },
     },
     module: {
         rules: [
