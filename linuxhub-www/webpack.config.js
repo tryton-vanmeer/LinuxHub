@@ -5,7 +5,7 @@ var path = require("path")
 module.exports = {
     context: path.join(__dirname, "src"),
     resolve: {
-        extensions: [".js", ".ts", ".tsx"]
+        extensions: [".js", ".ts", ".tsx", ".svg"]
     },
     entry: ["./index.tsx"],
     output: {
@@ -57,6 +57,10 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
+                loader: "file-loader"
             },
         ]
     },
