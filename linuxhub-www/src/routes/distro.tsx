@@ -1,6 +1,6 @@
 import * as React from "react";
 import { RouteProps } from 'react-router';
-import { Route, withRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import ImageLink from "../components/imagelink";
 import Os from "./os";
 
@@ -72,4 +72,4 @@ class Distro extends React.Component<RouteProps, {}> {
     }
 }
 
-export default withRouter(Distro);
+export default Distro;
