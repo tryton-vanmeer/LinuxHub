@@ -10,18 +10,18 @@ class Distro extends React.Component<RouteProps, {}> {
     }
 
     public componentDidMount() {
-        const id = this.props.match.params.id;
+        const distro = this.props.match.params.distro;
 
         fetch("/api/distro")
         .then(res => res.json())
         .then((data) => {
             this.setState({
-                name: data[id]["name"]
+                name: data[distro]["name"]
             });
         })
         .catch(console.log);
 
-        fetch("/api/distro/" + id)
+        fetch("/api/distro/" + distro)
         .then(res => res.json())
         .then((data) => {
             // Sort OS newest to oldest
@@ -48,8 +48,8 @@ class Distro extends React.Component<RouteProps, {}> {
     }
 
     public render() {
-        const id = this.props.match.params.id;
-        const logo = require("../assets/" + id + ".svg").default
+        const distro = this.props.match.params.distro;
+        const logo = require("../assets/" + distro + ".svg").default
 
         return (
             <main>
@@ -59,7 +59,7 @@ class Distro extends React.Component<RouteProps, {}> {
                     {this.state.os_list.map((os => (
                         <div className="column is-one-quarter" key={os.id}>
                             <ImageLink
-                                link={"/distro/" + id + "/" + os.id}
+                                link={"/" + distro + "/" + os.id}
                                 title={os.name}
                                 img={logo}
                             />

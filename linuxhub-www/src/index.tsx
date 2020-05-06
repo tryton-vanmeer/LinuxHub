@@ -15,7 +15,7 @@ ReactDOM.render((
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={Home} />
-                <Route path="/distro/:id" component={Distro} />
+                <Route path="/:distro" component={Distro} />
             </Switch>
         </Router>
     </BrowserRouter>
