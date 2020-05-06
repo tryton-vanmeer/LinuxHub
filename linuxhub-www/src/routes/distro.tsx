@@ -1,6 +1,7 @@
 import * as React from "react";
 import { RouteProps } from 'react-router';
 import { withRouter } from "react-router-dom";
+import ImageLink from "../components/imagelink";
 
 class Distro extends React.Component<RouteProps, {}> {
     state = {
@@ -47,13 +48,24 @@ class Distro extends React.Component<RouteProps, {}> {
     }
 
     public render() {
+        const id = this.props.match.params.id;
+        const logo = require("../assets/" + id + ".svg").default
+
         return (
             <main>
                 <h1 className="distro-header">{this.state.name}</h1>
 
-                {this.state.os_list.map((os => (
-                    <p>{os.name} => {os.id}</p>
-                )))}
+                <div className="columns is-multiline is-desktop">
+                    {this.state.os_list.map((os => (
+                        <div className="column is-one-quarter" key={os.id}>
+                            <ImageLink
+                                link={"/distro/" + id + "/" + os.id}
+                                title={os.name}
+                                img={logo}
+                            />
+                        </div>
+                    )))}
+                </div>
             </main>
         );
     }
