@@ -8,28 +8,28 @@ class Home extends React.Component<{}, {}> {
                 <div className="columns is-desktop">
                     <div className="column">
                         <ImageLink
-                            link="/fedora"
+                            link="/distro/fedora"
                             title="Fedora"
                             img={require("../assets/fedora.svg").default}
                         />
                     </div>
                     <div className="column">
                         <ImageLink
-                            link="/silverblue"
+                            link="/distro/silverblue"
                             title="Silverblue"
                             img={require("../assets/silverblue.svg").default}
                         />
                     </div>
                     <div className="column">
                         <ImageLink
-                            link="/ubuntu"
+                            link="/distro/ubuntu"
                             title="Ubuntu"
                             img={require("../assets/ubuntu.svg").default}
                         />
                     </div>
                     <div className="column">
                         <ImageLink
-                            link="/debian"
+                            link="/distro/debian"
                             title="Debian"
                             img={require("../assets/debian.svg").default}
                         />

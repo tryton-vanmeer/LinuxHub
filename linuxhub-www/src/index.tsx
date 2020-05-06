@@ -5,6 +5,7 @@ import { createBrowserHistory } from 'history'
 import Header from "./components/header";
 import Home from "./routes/home"
 import Distro from "./routes/distro";
+import Os from "./routes/os";
 import "./sass/main.scss";
 
 ReactDOM.render((
@@ -15,7 +16,7 @@ ReactDOM.render((
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={Home} />
-                <Route path="/:distro" component={Distro} />
+                <Route path="/distro/:distro" component={Distro}></Route>
             </Switch>
         </Router>
     </BrowserRouter>

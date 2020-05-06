@@ -1,7 +1,8 @@
 import * as React from "react";
 import { RouteProps } from 'react-router';
-import { withRouter } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import ImageLink from "../components/imagelink";
+import Os from "./os";
 
 class Distro extends React.Component<RouteProps, {}> {
     state = {
@@ -59,7 +60,7 @@ class Distro extends React.Component<RouteProps, {}> {
                     {this.state.os_list.map((os => (
                         <div className="column is-one-quarter" key={os.id}>
                             <ImageLink
-                                link={"/" + distro + "/" + os.id}
+                                link={`/distro/${distro}/${os.id}`}
                                 title={os.name}
                                 img={logo}
                             />
