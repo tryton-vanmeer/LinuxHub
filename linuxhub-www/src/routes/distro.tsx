@@ -51,7 +51,7 @@ class Distro extends React.Component<RouteProps, {}> {
         const distro = this.props.match.params.distro;
         const logo = require("../assets/" + distro + ".svg").default
 
-        return (
+        return(
             <main>
                 <h1 className="distro-header">{this.state.name}</h1>
 

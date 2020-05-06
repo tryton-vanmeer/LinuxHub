@@ -3,7 +3,7 @@ import ImageLink from "../components/imagelink";
 
 class Home extends React.Component<{}, {}> {
     public render() {
-        return (
+        return(
             <main>
                 <div className="columns is-desktop">
                     <div className="column">
