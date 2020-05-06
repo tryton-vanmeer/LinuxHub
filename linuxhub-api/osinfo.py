@@ -93,7 +93,11 @@ class OSInfo():
 
         if distro_id == Distro.fedora:
             # Filter out silverblue
-            return [os for os in data if "fedora" in os.get_short_id()]
+            data = [os for os in data if "fedora" in os.get_short_id()]
+            # Filter out unknown
+            return list(
+                    filter(lambda os: "unknown" not in os.get_short_id(), data)
+                )
 
         return data
 
