@@ -89,17 +89,11 @@ class OSInfo():
 
         if distro_id == Distro.silverblue:
             # Filter out regular Fedora
-            return [
-                os for os in self.os_list if os.get_distro() == "fedora"
-                and "silverblue" in os.get_short_id()
-            ]
+            return [os for os in data if "silverblue" in os.get_short_id()]
 
         if distro_id == Distro.fedora:
             # Filter out silverblue
-            return [
-                os for os in self.os_list if os.get_distro() == distro_id
-                and "fedora" in os.get_short_id()
-            ]
+            return [os for os in data if "fedora" in os.get_short_id()]
 
         return data
 
