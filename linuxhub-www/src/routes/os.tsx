@@ -2,12 +2,45 @@ import * as React from "react";
 import { RouteProps } from 'react-router';
 
 class Os extends React.Component<RouteProps, {}> {
-    public render() {
-        const os = this.props.match.params.os;
+    state = {
+        name: "",
+        codename: "",
+        eol: "",
+        media: []
+    }
 
+    public componentDidMount() {
+        const distro = this.props.match.params.distro;
+        const version = this.props.match.params.os;
+
+        fetch(`/api/distro/${distro}/${version}`)
+        .then(res => res.json())
+        .then((data) => {
+            this.setState({
+                name: data["name"],
+                codename: data["codename"],
+                eol: data["eol"],
+                media: data["media"],
+            });
+        });
+    }
+
+    public render() {
         return(
             <main>
-                <h1 className="distro-header">{os}</h1>
+                <h1 className="distro-header">{this.state.name}</h1>
+                <h2 className="distro-header">{this.state.codename}</h2>
+
+                <p>{this.state.eol}</p>
+
+                {this.state.media.map((media => (
+                    <div>
+                        <br/>
+                        <p>{media.name}</p>
+                        <p>{media.url}</p>
+                        <p>{media.arch}</p>
+                    </div>
+                )))}
             </main>
         )
     }
