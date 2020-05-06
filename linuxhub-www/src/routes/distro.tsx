@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 class Distro extends React.Component<RouteProps, {}> {
     state = {
         name: "",
-        data: []
+        os_list: []
     }
 
     public componentDidMount() {
@@ -14,7 +14,6 @@ class Distro extends React.Component<RouteProps, {}> {
         fetch("/api/distro")
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
             this.setState({
                 name: data[id]["name"]
             });
@@ -25,10 +24,9 @@ class Distro extends React.Component<RouteProps, {}> {
         .then(res => res.json())
         .then((data) => {
             this.setState({
-                data: data
+                os_list: data
             });
         })
-        .catch(console.log);
     }
 
     public render() {
@@ -36,9 +34,9 @@ class Distro extends React.Component<RouteProps, {}> {
             <main>
                 <h1 className="distro-header">{this.state.name}</h1>
 
-                <div>
-                    {JSON.stringify(this.state.data, null, 2)}
-                </div>
+                {this.state.os_list.map((os => (
+                    <p>{os.name}</p>
+                )))}
             </main>
         );
     }
