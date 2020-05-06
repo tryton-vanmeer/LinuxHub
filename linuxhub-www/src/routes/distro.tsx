@@ -1,6 +1,5 @@
 import * as React from "react";
 import { RouteProps } from 'react-router';
-import { Route } from "react-router-dom";
 import ImageLink from "../components/imagelink";
 import Os from "./os";
 
