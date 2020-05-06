@@ -84,6 +84,9 @@ class OSInfo():
         self.os_list = [os for os in _os_list if os.get_family() == "linux"]
 
     def get_distro_os_list(self, distro_id: str) -> list:
+        # Filter out distros that aren't distro_id
+        data = [os for os in self.os_list if os.get_distro() == distro_id]
+
         if distro_id == Distro.silverblue:
             # Filter out regular Fedora
             return [
@@ -98,7 +101,7 @@ class OSInfo():
                 and "fedora" in os.get_short_id()
             ]
 
-        return [os for os in self.os_list if os.get_distro() == distro_id]
+        return data
 
     def get_distro_os(self, distro_id: str, os_id: str) -> Os:
         os_list = self.get_distro_os_list(distro_id)
