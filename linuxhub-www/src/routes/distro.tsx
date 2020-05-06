@@ -23,6 +23,23 @@ class Distro extends React.Component<RouteProps, {}> {
         fetch("/api/distro/" + id)
         .then(res => res.json())
         .then((data) => {
+            // Sort OS newest to oldest
+            data = data.sort((a, b) => {
+                // Some Distros have non-numeric id/versions.
+
+                // Fedora Rawhide
+                if (b.id == "Rawhide") {
+                    return 1;
+                }
+
+                // Debian Testing
+                if (b.id == "testing") {
+                    return 1;
+                }
+
+                return (parseFloat(a.id) < parseFloat(b.id)) ? 1 : -1;
+            });
+
             this.setState({
                 os_list: data
             });
@@ -35,7 +52,7 @@ class Distro extends React.Component<RouteProps, {}> {
                 <h1 className="distro-header">{this.state.name}</h1>
 
                 {this.state.os_list.map((os => (
-                    <p>{os.name}</p>
+                    <p>{os.name} => {os.id}</p>
                 )))}
             </main>
         );
