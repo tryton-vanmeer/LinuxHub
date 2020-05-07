@@ -29,8 +29,8 @@ class Os extends React.Component<RouteProps, {}> {
     public render() {
         return(
             <main>
-                <h1 className="distro-header">{this.state.name}</h1>
-                <h2 className="distro-header">{this.state.codename}</h2>
+                <h1>{this.state.name}</h1>
+                <h2>{this.state.codename}</h2>
                 <br/>
 
                 {/* <p>{this.state.eol}</p> */}

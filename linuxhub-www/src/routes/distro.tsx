@@ -52,7 +52,7 @@ class Distro extends React.Component<RouteProps, {}> {
 
         return(
             <main>
-                <h1 className="distro-header">{this.state.name}</h1>
+                <h1>{this.state.name}</h1>
 
                 <div className="columns is-multiline is-desktop">
                     {this.state.os_list.map((os => (
