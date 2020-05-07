@@ -19,31 +19,33 @@ class Header extends React.Component<{}, {}> {
         this.connect_hamburger();
 
         return(
-            <nav className="navbar" role="navigation" aria-label="main navigation">
-                <div className="navbar-brand">
-                    <Link to="/" id="navbar-logo" className="navbar-item">
-                        <span>Linux</span><span>hub</span>
-                    </Link>
+            <div id="nav-wrapper">
+                <nav className="navbar" role="navigation" aria-label="main navigation">
+                    <div className="navbar-brand">
+                        <Link to="/" id="navbar-logo" className="navbar-item">
+                            <span>Linux</span><span>hub</span>
+                        </Link>
 
-                    <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
+                        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
 
-                <div id="nav-menu" className="navbar-menu">
-                    <div className="navbar-end">
-                        <div className="navbar-item">
-                            <div className="buttons">
-                                <Link to="/about" className="button is-primary">
-                                    <strong>About</strong>
-                                </Link>
+                    <div id="nav-menu" className="navbar-menu">
+                        <div className="navbar-end">
+                            <div className="navbar-item">
+                                <div className="buttons">
+                                    <Link to="/about" className="button is-primary">
+                                        <strong>About</strong>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
         );
     }
 }
