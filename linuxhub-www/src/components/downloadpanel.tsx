@@ -15,9 +15,9 @@ class DownloadPanel extends React.Component<DownloadPanelProps, {}> {
                 </p>
                 <a className="panel-block">
                     <span className="panel-icon">
-                        <i className="fas fa-book" aria-hidden="true"></i>
+                        <i className="fas fa-compact-disc" aria-hidden="true"></i>
                     </span>
-                    bulma
+                    bulma (Arch)
                 </a>
             </article>
         );
