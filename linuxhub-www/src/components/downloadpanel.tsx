@@ -1,7 +1,14 @@
 import * as React from "react";
+import * as Path from "path";
+
+interface Media {
+    url: string,
+    name: string,
+    arch: string
+}
 
 interface DownloadPanelProps {
-    media: object[],
+    media: Media[],
 }
 
 class DownloadPanel extends React.Component<DownloadPanelProps, {}> {
