@@ -21,7 +21,15 @@ def read_distro(distro_id: Distro):
     os_list = osinfo.get_distro_os_list(distro_id)
 
     for os in os_list:
-        data.append({"id": os.get_version().replace(".", "_"), "name": os.get_name()})
+        try:
+            id = os.get_version().replace(".", "_")
+        except AttributeError:
+            id = os.get_version()
+
+        data.append({
+            "id": id,
+            "name": os.get_name()
+        })
 
     return data
 

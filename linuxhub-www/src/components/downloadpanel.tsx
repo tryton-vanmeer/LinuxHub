@@ -33,6 +33,8 @@ class DownloadPanel extends React.Component<DownloadPanelProps, {}> {
             name = name.replace(new RegExp("aarch64[-]?"), "");
             name = name.replace(new RegExp("arm64[-]?"), "");
             name = name.replace(new RegExp("armhfp[-]?"), "");
+            name = name.replace(new RegExp("armhf[-]?"), "");
+            name = name.replace(new RegExp("i386[-]?"), "");
             name = name.replace(new RegExp("ppc64el[-]?"), "");
             name = name.replace(new RegExp("s390x[-]?"), "");
         }
