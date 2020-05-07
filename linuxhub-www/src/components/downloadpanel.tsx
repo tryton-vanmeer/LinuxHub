@@ -44,12 +44,15 @@ class DownloadPanel extends React.Component<DownloadPanelProps, {}> {
                 <p className="panel-heading">
                     DOWNLOAD
                 </p>
-                <a className="panel-block">
-                    <span className="panel-icon">
-                        <i className="fas fa-compact-disc" aria-hidden="true"></i>
-                    </span>
-                    bulma (Arch)
-                </a>
+
+                {this.props.media.map((media => (
+                    <a className="panel-block" href={media.url}>
+                        <span className="panel-icon">
+                            <i className="fas fa-compact-disc" aria-hidden="true" />
+                        </span>
+                        {this.get_name(media)} ({media.arch})
+                    </a>
+                )))}
             </article>
         );
     }
