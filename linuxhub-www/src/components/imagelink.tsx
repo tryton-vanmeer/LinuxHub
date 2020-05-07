@@ -9,9 +9,9 @@ interface ImageLinkProps {
 
 class ImageLink extends React.Component<ImageLinkProps, {}> {
     public render() {
-        const {link, img, title} = this.props;
+        const { link, img, title } = this.props;
 
-        return (
+        return(
             <Link to={link} className="imagelink">
                 <img src={img} alt={title + " Logo"}/>
                 <p>{title}</p>

@@ -1,7 +1,6 @@
 import * as React from "react";
 import { RouteProps } from 'react-router';
 import ImageLink from "../components/imagelink";
-import Os from "./os";
 
 class Distro extends React.Component<RouteProps, {}> {
     state = {
@@ -10,7 +9,7 @@ class Distro extends React.Component<RouteProps, {}> {
     }
 
     public componentDidMount() {
-        const distro = this.props.match.params.distro;
+        const { distro } = this.props.match.params;
 
         fetch("/api/distro")
         .then(res => res.json())
