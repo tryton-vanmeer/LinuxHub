@@ -31,19 +31,11 @@ class Os extends React.Component<RouteProps, {}> {
             <main>
                 <h1 className="distro-header">{this.state.name}</h1>
                 <h2 className="distro-header">{this.state.codename}</h2>
+                <br/>
 
-                <p>{this.state.eol}</p>
+                {/* <p>{this.state.eol}</p> */}
 
                 <DownloadPanel media={this.state.media} />
-
-                {/* {this.state.media.map((media => (
-                    <div>
-                        <br/>
-                        <p>{media.name}</p>
-                        <p>{media.url}</p>
-                        <p>{media.arch}</p>
-                    </div>
-                )))} */}
             </main>
         )
     }
