@@ -1,5 +1,6 @@
 import * as React from "react";
 import { RouteProps } from 'react-router';
+import DownloadPanel from "../components/downloadpanel";
 
 class Os extends React.Component<RouteProps, {}> {
     state = {
@@ -33,14 +34,16 @@ class Os extends React.Component<RouteProps, {}> {
 
                 <p>{this.state.eol}</p>
 
-                {this.state.media.map((media => (
+                <DownloadPanel media={this.state.media} />
+
+                {/* {this.state.media.map((media => (
                     <div>
                         <br/>
                         <p>{media.name}</p>
                         <p>{media.url}</p>
                         <p>{media.arch}</p>
                     </div>
-                )))}
+                )))} */}
             </main>
         )
     }
