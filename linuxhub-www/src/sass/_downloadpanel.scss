@@ -1,0 +1,14 @@
+.panel.is-link {
+    .panel-heading {
+        background-color: #3298DC;
+    }
+
+    .panel-block {
+        background-color: $black;
+        color: $text;
+
+        &:hover {
+            background-color: lighten($black, 10%);
+        }
+    }
+}
