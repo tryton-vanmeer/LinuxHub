@@ -4,8 +4,13 @@
     }
 
     .panel-block {
+        font-size: 1.25em;
         background-color: $black;
         color: $text;
+
+        .panel-icon {
+            color: $text;
+        }
 
         &:hover {
             background-color: lighten($black, 10%);
