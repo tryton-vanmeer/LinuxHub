@@ -29,8 +29,12 @@ class DownloadPanel extends React.Component<DownloadPanelProps, {}> {
 
             // Remove arch
             name = name.replace(new RegExp("x86_64[-]?"), "");
+            name = name.replace(new RegExp("amd64[-]?"), "");
             name = name.replace(new RegExp("aarch64[-]?"), "");
+            name = name.replace(new RegExp("arm64[-]?"), "");
             name = name.replace(new RegExp("armhfp[-]?"), "");
+            name = name.replace(new RegExp("ppc64el[-]?"), "");
+            name = name.replace(new RegExp("s390x[-]?"), "");
         }
 
         return name;
