@@ -15,12 +15,12 @@ RUN pacman -S --noconfirm \
     python-gobject \
     python-pip
 
-# Setup API
 COPY linuxhub-api /app/api
+COPY configs/start.sh /app
+COPY configs/nginx.conf /etc/nginx/
+COPY configs/linuxhub.nginx /etc/nginx/sites-enabled/linuxhub
 
 WORKDIR /app/api
 RUN pip install -r requirements.txt
-
-COPY configs/start.sh /app
 
 CMD /app/start.sh
