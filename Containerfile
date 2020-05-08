@@ -15,6 +15,7 @@ RUN pacman -S --noconfirm \
     python-gobject \
     python-pip
 
+COPY linuxhub-www/dist /app/www
 COPY linuxhub-api /app/api
 COPY configs/start.sh /app
 COPY configs/nginx.conf /etc/nginx/
