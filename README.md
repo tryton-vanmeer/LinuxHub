@@ -1,15 +1,25 @@
 # LinuxHub
 
-## Deploying Example Container
+## Building
 
-### Build
+### LinuxHub Front-End
 
-```sh
-podman build -t linuxhub .
+```
+$ cd linuxhub-www
+$ npm i
+$ npm run build
 ```
 
-### Run
+### Example Container
 
-```sh
-podman run --rm -p 8080:80 -it linuxhub
+```
+$ podman build -t linuxhub .
+```
+
+## Running
+
+### Example Container
+
+```
+$ podman run --rm -p 8080:80 -it linuxhub
 ```
