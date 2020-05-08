@@ -10,7 +10,7 @@ $ npm i
 $ npm run build
 ```
 
-### Example Container
+### Container
 
 ```
 $ podman build -t linuxhub .
@@ -18,7 +18,7 @@ $ podman build -t linuxhub .
 
 ## Running
 
-### Example Container
+### Container
 
 ```
 $ podman run --rm -p 8080:80 -it linuxhub
