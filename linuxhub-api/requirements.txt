@@ -2,7 +2,9 @@ click==7.1.1
 fastapi==0.54.1
 h11==0.9.0
 httptools==0.1.1
+pycairo==1.19.1
 pydantic==1.5.1
+PyGObject==3.36.1
 starlette==0.13.2
 uvicorn==0.11.3
 uvloop==0.14.0
