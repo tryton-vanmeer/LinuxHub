@@ -2,6 +2,8 @@
 
 Explore Linux distros and their versions.
 
+See the READMEs in the linuxhub-api and linuxhub-www subprojects for more information.
+
 <!-- ## Container
 
 Running the example container.
