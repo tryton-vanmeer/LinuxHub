@@ -1,5 +1,7 @@
 # LinuxHub WWW
 
+Frontend for LinuxHub API using React and TypeScript.
+
 ## Running
 
 ### Install dependencies
