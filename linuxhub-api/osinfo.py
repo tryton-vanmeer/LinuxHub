@@ -3,7 +3,7 @@
 from enum import Enum
 import gi
 gi.require_version("Libosinfo", "1.0")
-from gi.repository import Libosinfo  # noqa: I202
+from gi.repository import Libosinfo  # noqa: E402
 
 
 class Distro(str, Enum):
