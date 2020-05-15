@@ -109,11 +109,3 @@ class OSInfo():
             return Os(result[0])
         except IndexError:
             return None
-
-
-if __name__ == "__main__":
-    osinfo = OSInfo()
-
-    distros = [os.get_distro() for os in osinfo.os_list]
-
-    print(set(distros))
