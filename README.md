@@ -4,20 +4,6 @@ Explore Linux distros and their versions.
 
 See the READMEs in the linuxhub-api and linuxhub-www subprojects for more information.
 
-<!-- ## Container
-
-Running the example container.
-
-```
-$ cd linuxhub-www
-# npm run build
-```
-
-```
-$ podman build -t linuxhub .
-$ podman run --rm -p 8080:80 -it linuxhub
-``` -->
-
 ## Screenshots
 
 ![Home](screenshots/home.png)
