@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from osinfo import OSInfo, Distro
+from linuxhub.osinfo import OSInfo, Distro
 
 app = FastAPI()
 osinfo = OSInfo()
