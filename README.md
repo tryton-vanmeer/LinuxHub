@@ -1,6 +1,8 @@
 # LinuxHub
 
-## Running
+Explore Linux distros and their versions.
+
+<!-- ## Running
 
 ### Back-End
 
@@ -11,9 +13,9 @@ $ cd linuxhub-api
 
 $ pip install -r requirements.txt
 $ uvicorn --reload main:app
-```
+``` -->
 
-### Front-End
+<!-- ### Front-End
 
 ```
 $ cd linuxhub-www
@@ -21,9 +23,9 @@ $ npm i
 $ npm run start
 
 # Point your web browser to http://localhost:8080
-```
+``` -->
 
-## Container
+<!-- ## Container
 
 Running the example container.
 
@@ -35,7 +37,7 @@ $ cd linuxhub-www
 ```
 $ podman build -t linuxhub .
 $ podman run --rm -p 8080:80 -it linuxhub
-```
+``` -->
 
 ## Screenshots
 
