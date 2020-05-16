@@ -1,0 +1,24 @@
+FROM docker.io/library/archlinux
+
+LABEL name="LinuxHub API" \
+      maintainer="Tryton Van Meer <trytonvanmeer@protonmail.com>"
+
+RUN pacman -Syu --noconfirm
+
+RUN pacman -S --noconfirm libosinfo
+RUN pacman -S --noconfirm gunicorn
+RUN pacman -S --noconfirm python
+RUN pacman -S --noconfirm python-pip
+RUN pacman -S --noconfirm python-gobject
+RUN pacman -S --noconfirm python-cairo
+
+RUN pacman -Sc --noconfirm
+
+COPY linuxhub /app/linuxhub
+COPY requirements.txt /app/linuxhub
+
+WORKDIR /app
+
+RUN pip3 install -r linuxhub/requirements.txt
+
+CMD gunicorn -k uvicorn.workers.UvicornWorker linuxhub.api:app
