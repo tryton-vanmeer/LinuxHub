@@ -20,3 +20,13 @@ Source the activate script for your shell.
 ### Run
 
 `uvicorn --reload main:app`
+
+## Container
+
+### Build the image
+
+`podman build . -t linuxhub-api`
+
+### Run the container
+
+`podman run --rm -p 8000:8000 -it linuxhub-api`
