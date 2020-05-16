@@ -19,7 +19,7 @@ Source the activate script for your shell.
 
 ### Run
 
-`uvicorn --reload main:app`
+`uvicorn --reload linuxhub.api:app`
 
 ## Container
 
