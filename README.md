@@ -18,6 +18,8 @@ See the READMEs in the linuxhub-api and linuxhub-www subprojects for more inform
 
 ## Container
 
-When running the containers, make sure the `linuxhub` pod exists.
+When running the containers, as documented in subproject READMEs, make sure the `linuxhub` pod exists.
 
 `podman pod create --name linuxhub -p 8080:80 -p 8000:8000`
+
+Running `podman-compose.sh` will automate building the containers and starting them in a pod.
