@@ -29,4 +29,4 @@ Source the activate script for your shell.
 
 ### Run the container
 
-`podman run --rm -p 8000:8000 -it linuxhub-api`
+`podman run --rm --pod linuxhub -it linuxhub-api`
