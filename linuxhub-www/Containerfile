@@ -1,0 +1,7 @@
+FROM docker.io/library/nginx
+
+LABEL name="LinuxHub WWW" \
+      maintainer="Tryton Van Meer <trytonvanmeer@protonmail.com>"
+
+COPY dist /usr/share/nginx/html
+COPY linuxhub.conf /etc/nginx/conf.d/default.conf
